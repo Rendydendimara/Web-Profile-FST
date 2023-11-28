@@ -7,32 +7,42 @@ import { FaRegFolder, FaRegUserCircle } from "react-icons/fa/index.js";
 import ImageFallback from "../helpers/ImageFallback";
 import { Image } from "@chakra-ui/react";
 
-const BlogCard = ({ data }: { data: Post }) => {
-  const { summary_length } = config.settings;
-  const blog_folder = "berita";
-  const { title, image, author, categories, date } = data.frontmatter;
+
+interface IProps {
+  data: {
+    title: string;
+    image: string;
+    author: string;
+    date: any;
+    description: string;
+    slug: string;
+  }
+}
+
+const ProductCard: React.FC<IProps> = (props) => {
+  // const { summary_length, blog_folder } = config.settings;
   return (
     <div className="bg-body dark:bg-darkmode-body">
-      {image && (
-        <Image
-          className="mb-6 w-full rounded"
-          src="/images/image-placeholder.png"
-          alt={title}
-          width={445}
-          height={230}
-        />
-      )}
+      {/* {image && ( */}
+      <Image
+        className="mb-6 w-full rounded"
+        src={props.data.image}
+        alt={props.data.title}
+        width={200}
+        height={230}
+      />
+      {/* )} */}
       <h4 className="mb-3">
-        <Link href={`/${blog_folder}/${data.slug}`}>{title}</Link>
+        <Link href={`/katalog-produk/${props.data.slug}`}>{props.data.title}</Link>
       </h4>
       <ul className="mb-4">
         <li className="mr-4 inline-block">
-          <a href={`/authors/${slugify(author)}`}>
+          <a href={`/authors/${slugify(props.data.author)}`}>
             <FaRegUserCircle className={"-mt-1 mr-2 inline-block"} />
-            {humanize(author)}
+            {humanize(props.data.author)}
           </a>
         </li>
-        <li className="mr-4 inline-block">
+        {/* <li className="mr-4 inline-block">
           <FaRegFolder className={"-mt-1 mr-2 inline-block"} />
           {categories?.map((category: string, index: number) => (
             <Link key={index} href={`/categories/${slugify(category)}`}>
@@ -40,20 +50,20 @@ const BlogCard = ({ data }: { data: Post }) => {
               {index !== categories.length - 1 && ", "}
             </Link>
           ))}
-        </li>
-        {date && <li className="inline-block">{dateFormat(date)}</li>}
+        </li> */}
+        {props.data.date && <li className="inline-block">{dateFormat(props.data.date)}</li>}
       </ul>
       <p className="mb-6">
-        {plainify(data.content!.slice(0, Number(summary_length)))}
+        {plainify(props.data.description!.slice(0, Number(100)))}
       </p>
       <Link
         className="btn btn-outline-primary btn-sm"
-        href={`/${blog_folder}/${data.slug}`}
+        href={`/katalog-produk/${props.data.slug}`}
       >
-        selengkapnya
+        Cek detail
       </Link>
     </div>
   );
 };
 
-export default BlogCard;
+export default ProductCard;

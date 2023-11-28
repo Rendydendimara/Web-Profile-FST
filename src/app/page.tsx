@@ -1,3 +1,7 @@
+import InformasiHomePage from "../components/molecules/InformasiHomePage";
+import BeritaTerakhir from "../components/molecules/BeritaTerakhir";
+import CardAkedemik from "../components/molecules/CardAkedemik";
+import CarouselHomePage from "../components/molecules/CarouselHomePage";
 import ImageFallback from "@/helpers/ImageFallback";
 import { getListPage } from "@/lib/contentParser";
 import { markdownify } from "@/lib/utils/textConverter";
@@ -6,6 +10,7 @@ import SeoMeta from "@/partials/SeoMeta";
 import Testimonials from "@/partials/Testimonials";
 import { Button, Feature } from "@/types";
 import { FaCheck } from "react-icons/fa/index.js";
+import TigaProdukTerbaru from "../components/molecules/TigaProdukTerbaru";
 
 const Home = () => {
   const homepage = getListPage("homepage/_index.md");
@@ -23,7 +28,22 @@ const Home = () => {
   return (
     <>
       <SeoMeta />
-      <section className="section pt-14">
+      <CarouselHomePage />
+      <section className="bg-gradient section-sm pt-14">
+        <CardAkedemik />
+      </section>
+      <section className="section p-0 container">
+        <BeritaTerakhir />
+      </section>
+      <section className="bg-gradient section-sm pt-14">
+        <InformasiHomePage />
+      </section>
+      <section className="section-sm pt-14 container">
+        <TigaProdukTerbaru />
+      </section>
+
+
+      {/* <section className="section pt-14">
         <div className="container">
           <div className="row justify-center">
             <div className="mb-16 text-center lg:col-7">
@@ -55,9 +75,9 @@ const Home = () => {
             )}
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {features.map((feature, index: number) => (
+      {/* {features.map((feature, index: number) => (
         <section
           key={index}
           className={`section-sm ${index % 2 === 0 && "bg-gradient"}`}
@@ -65,9 +85,8 @@ const Home = () => {
           <div className="container">
             <div className="row items-center justify-between">
               <div
-                className={`mb:md-0 mb-6 md:col-5 ${
-                  index % 2 !== 0 && "md:order-2"
-                }`}
+                className={`mb:md-0 mb-6 md:col-5 ${index % 2 !== 0 && "md:order-2"
+                  }`}
               >
                 <ImageFallback
                   src={feature.image}
@@ -77,9 +96,8 @@ const Home = () => {
                 />
               </div>
               <div
-                className={`md:col-7 lg:col-6 ${
-                  index % 2 !== 0 && "md:order-1"
-                }`}
+                className={`md:col-7 lg:col-6 ${index % 2 !== 0 && "md:order-1"
+                  }`}
               >
                 <h2
                   className="mb-4"
@@ -112,7 +130,7 @@ const Home = () => {
       ))}
 
       <Testimonials data={testimonial} />
-      <CallToAction data={callToAction} />
+      <CallToAction data={callToAction} /> */}
     </>
   );
 };

@@ -5,43 +5,50 @@
       "url": "/"
     },
     {
-      "name": "About",
-      "url": "/about"
-    },
-    {
-      "name": "Elements",
-      "url": "/elements"
-    },
-    {
-      "name": "Pages",
+      "name": "Akademik",
       "url": "",
       "hasChildren": true,
       "children": [
         {
-          "name": "Contact",
-          "url": "/contact"
+          "name": "Teknik Informatika",
+          "url": "/akademik/program-sarjana/teknik-informatika"
         },
         {
-          "name": "Blog",
-          "url": "/blog"
+          "name": "Peternakan",
+          "url": "#"
         },
         {
-          "name": "Authors",
-          "url": "/authors"
+          "name": "Agroteknologi",
+          "url": "#"
         },
         {
-          "name": "Categories",
-          "url": "/categories"
+          "name": "Agribisnis",
+          "url": "#"
         },
         {
-          "name": "Search",
-          "url": "/search"
-        },
-        {
-          "name": "404 Page",
-          "url": "/404"
+          "name": "Teknik Hasil Perikanan",
+          "url": "#"
         }
       ]
+    },
+    {
+      "name": "Berita",
+      "url": "/berita"
+    },
+    {
+      "name": "Tentang FST UNKRISWINA",
+      "url": "/tentang-fst-unkriswina",
+      "hasChildren": false,
+      "children": [
+        {
+          "name": "Profile FST UNKRISWINA",
+          "url": "/tentang-fst-unkriswina"
+        }
+      ]
+    },
+    {
+      "name": "Katalog Produk",
+      "url": "/katalog-produk"
     }
   ],
   "footer": [

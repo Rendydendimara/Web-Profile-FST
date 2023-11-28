@@ -1,8 +1,8 @@
 "use client";
 
 import config from "@/config/config.json";
+import { Image } from "@chakra-ui/react";
 import { useTheme } from "next-themes";
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -40,9 +40,9 @@ const Logo = ({ src }: { src?: string }) => {
         <Image
           width={logo_width.replace("px", "") * 2}
           height={logo_height.replace("px", "") * 2}
-          src={logoPath}
+          src={theme === "dark" || resolvedTheme === "dark" ? "/images/Site-Logo-Unkriswina-Putih-wp.png" : "/images/Site-Logo-Unkriswina-Hitam-wp.png"}
           alt={title}
-          priority
+          // priority
           style={{
             height: logo_height.replace("px", "") + "px",
             width: logo_width.replace("px", "") + "px",

@@ -36,7 +36,7 @@ const PostSidebar = ({
         </div>
       </div>
       {/* <!-- tags --> */}
-      <div className="mb-8">
+      {/* <div className="mb-8">
         <h5 className="mb-6">Tags</h5>
         <div className="rounded bg-theme-light p-6 dark:bg-darkmode-theme-light">
           <ul>
@@ -54,7 +54,7 @@ const PostSidebar = ({
             })}
           </ul>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

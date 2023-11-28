@@ -30,7 +30,7 @@ const Posts = () => {
         description={description}
         image={image}
       />
-      <PageHeader title={postIndex.frontmatter.title} />
+      <PageHeader title="Berita" />
       <section className="section">
         <div className="container">
           <div className="row gx-5">
@@ -43,12 +43,11 @@ const Posts = () => {
                 ))}
               </div>
               <Pagination
-                section={blog_folder}
+                section={"berita"}
                 currentPage={1}
                 totalPages={totalPages}
               />
             </div>
-
             <PostSidebar
               categories={categories}
               tags={tags}

@@ -1,7 +1,7 @@
+import Footer from "../components/molecules/Footer";
 import config from "@/config/config.json";
 import theme from "@/config/theme.json";
 import TwSizeIndicator from "@/helpers/TwSizeIndicator";
-import Footer from "@/partials/Footer";
 import Header from "@/partials/Header";
 import Providers from "@/partials/Providers";
 import "@/styles/main.scss";
@@ -47,9 +47,8 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <link
-          href={`https://fonts.googleapis.com/css2?family=${pf}${
-            sf ? "&family=" + sf : ""
-          }&display=swap`}
+          href={`https://fonts.googleapis.com/css2?family=${pf}${sf ? "&family=" + sf : ""
+            }&display=swap`}
           rel="stylesheet"
         />
       </head>
@@ -59,6 +58,7 @@ export default function RootLayout({
         <Providers>
           <Header />
           <main>{children}</main>
+          {/* <Footer /> */}
           <Footer />
         </Providers>
       </body>
