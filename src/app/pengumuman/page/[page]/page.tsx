@@ -64,7 +64,7 @@ const Posts = ({ params }: { params: { page: number } }) => {
         description={description}
         image={image}
       />
-      <PageHeader title={"Berita"} />
+      <PageHeader title={"Pengumuman"} />
       <section className="section">
         <div className="container">
           <div className="row gx-5">
@@ -77,7 +77,7 @@ const Posts = ({ params }: { params: { page: number } }) => {
                 ))}
               </div>
               <Pagination
-                section={"berita"}
+                section={"pengumuman"}
                 currentPage={currentPage}
                 totalPages={totalPages}
               />

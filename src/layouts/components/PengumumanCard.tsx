@@ -7,9 +7,9 @@ import { FaRegFolder, FaRegUserCircle } from "react-icons/fa/index.js";
 import ImageFallback from "../helpers/ImageFallback";
 import { Image } from "@chakra-ui/react";
 
-const BlogCard = ({ data }: { data: Post }) => {
+const PengumumanCard = ({ data }: { data: Post }) => {
   const { summary_length } = config.settings;
-  const blog_folder = "berita";
+  const blog_folder = "pengumuman";
   const { title, image, author, categories, date } = data.frontmatter;
   return (
     <div className="bg-body dark:bg-darkmode-body">
@@ -56,4 +56,4 @@ const BlogCard = ({ data }: { data: Post }) => {
   );
 };
 
-export default BlogCard;
+export default PengumumanCard;

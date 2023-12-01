@@ -138,8 +138,8 @@ const PostSingle = ({ params }: { params: { single: string } }) => {
           </div>
 
           {/* <!-- Related posts --> */}
-          <div className="section pb-0">
-            <h2 className="h3 mb-12 text-center">Berita Lainnya</h2>
+          {/* <div className="section pb-0">
+            <h2 className="h3 mb-12 text-center">Related Posts</h2>
             <div className="row justify-center">
               {similarPosts.map((post) => (
                 <div key={post.slug} className="lg:col-4 mb-7">
@@ -147,7 +147,7 @@ const PostSingle = ({ params }: { params: { single: string } }) => {
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
     </>

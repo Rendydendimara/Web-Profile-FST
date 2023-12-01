@@ -10,7 +10,7 @@
     "build": "next build",
     "preview": "next start",
     "postbuild": "next-sitemap",
-    "start": "next start",
+    "start": "next start -p 3005",
     "lint": "next lint",
     "format": "prettier -w ./src",
     "generate-json": "node scripts/jsonGenerator.js",

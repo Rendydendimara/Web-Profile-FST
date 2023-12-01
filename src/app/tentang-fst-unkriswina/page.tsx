@@ -5,8 +5,39 @@ import { getListPage } from "@/lib/contentParser";
 import { markdownify } from "@/lib/utils/textConverter";
 import SeoMeta from "@/partials/SeoMeta";
 import { RegularPage } from "@/types";
-import { Image, ListItem, UnorderedList } from "@chakra-ui/react";
+import { Flex, Image, ListItem, Text, UnorderedList } from "@chakra-ui/react";
 
+
+const STAFF_PIMPINAN = [
+    {
+        title: 'Dekan',
+        name: 'RAMBU YETTI KALAWAY S.T, M.T, M.M',
+    },
+    {
+        title: 'Wakin Dekan',
+        name: 'Explicabo illum suscipit quas',
+    },
+    {
+        title: 'Kepala Program Studi Teknik Informatika',
+        name: 'Explicabo illum suscipit quas',
+    },
+    {
+        title: 'Kepala Program Studi Peternakan',
+        name: 'Explicabo illum suscipit quas',
+    },
+    {
+        title: 'Kepala Program Studi Agroteknologi',
+        name: 'Explicabo illum suscipit quas',
+    },
+    {
+        title: 'Kepala Program Studi Agribisnis',
+        name: 'Explicabo illum suscipit quas',
+    },
+    {
+        title: 'Kepala Program Studi Teknologi Hasil Perikanan',
+        name: 'Explicabo illum suscipit quas',
+    }
+]
 
 const TentangFSTUnkriswina = () => {
     const data: RegularPage = getListPage("about/_index.md");
@@ -69,6 +100,21 @@ const TentangFSTUnkriswina = () => {
                             <ListItem>Melaksanakan pendidikan dan pengajaran berkompetensi kewirausahaan yang berlandaskan pada nilai-nilai kristiani</ListItem>
                             <ListItem>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo illum suscipit quas eos officia perspiciatis, ut fugiat. Ducimus quisquam voluptate officia ab dolor eligendi natus fugit quibusdam? Inventore, asperiores consectetur?</ListItem>
                             <ListItem>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia, voluptates molestias reiciendis, rerum vero vel amet unde obcaecati corrupti ducimus ipsa ab officia laborum rem accusamus. Molestiae architecto quasi illo!</ListItem>
+                        </UnorderedList>
+                        <h5 className="mb-0">
+                            Jajaran Pimpinan Fakultas Sains dan Teknologi Unkriswina Sumba
+                        </h5>
+                        <UnorderedList mt="-100px">
+                            {STAFF_PIMPINAN.map((dt, i) => (
+                                <ListItem key={i} >
+                                    <Flex h="25px" alignItems="center" gap="5px">
+                                        <Text p='0' m='0' fontWeight="bold">
+                                            {dt.title}:
+                                        </Text>
+                                        <Text p='0' m='0'>{dt.name}</Text>
+                                    </Flex>
+                                </ListItem>
+                            ))}
                         </UnorderedList>
                         <h5 className="mb-1">
                             Motto:

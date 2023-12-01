@@ -49,6 +49,10 @@
     {
       "name": "Katalog Produk",
       "url": "/katalog-produk"
+    },
+    {
+      "name": "Pengumuman",
+      "url": "/pengumuman"
     }
   ],
   "footer": [

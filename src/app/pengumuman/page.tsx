@@ -1,5 +1,6 @@
 import BlogCard from "@/components/BlogCard";
 import Pagination from "@/components/Pagination";
+import PengumumanCard from "@/components/PengumumanCard";
 import config from "@/config/config.json";
 import { getListPage, getSinglePage } from "@/lib/contentParser";
 import { getAllTaxonomy, getTaxonomy } from "@/lib/taxonomyParser";
@@ -8,40 +9,10 @@ import PageHeader from "@/partials/PageHeader";
 import PostSidebar from "@/partials/PostSidebar";
 import SeoMeta from "@/partials/SeoMeta";
 import { Post } from "@/types";
-
 const { blog_folder, pagination } = config.settings;
 
-// remove dynamicParams
-export const dynamicParams = false;
-
-// generate static params
-export const generateStaticParams = () => {
-  const allPost: Post[] = getSinglePage(blog_folder);
-  const allSlug: string[] = allPost.map((item) => item.slug!);
-  const totalPages = Math.ceil(allSlug.length / pagination);
-  let paths: { page: string }[] = [];
-
-  for (let i = 1; i < totalPages; i++) {
-    paths.push({
-      page: (i + 1).toString(),
-    });
-  }
-
-  return paths;
-};
-
-function spreadPages(num: number): number[] {
-  let pages = [];
-
-  for (let i = 2; i <= num; i++) {
-    pages.push(i);
-  }
-
-  return pages;
-}
-
 // for all regular pages
-const Posts = ({ params }: { params: { page: number } }) => {
+const Posts = () => {
   const postIndex: Post = getListPage(`${blog_folder}/_index.md`);
   const { title, meta_title, description, image } = postIndex.frontmatter;
   const posts: Post[] = getSinglePage(blog_folder);
@@ -50,11 +21,7 @@ const Posts = ({ params }: { params: { page: number } }) => {
   const tags = getTaxonomy(blog_folder, "tags");
   const sortedPosts = sortByDate(posts);
   const totalPages = Math.ceil(posts.length / pagination);
-  const currentPage =
-    params.page && !isNaN(Number(params.page)) ? Number(params.page) : 1;
-  const indexOfLastPost = currentPage * pagination;
-  const indexOfFirstPost = indexOfLastPost - pagination;
-  const currentPosts = sortedPosts.slice(indexOfFirstPost, indexOfLastPost);
+  const currentPosts = sortedPosts.slice(0, pagination);
 
   return (
     <>
@@ -64,7 +31,7 @@ const Posts = ({ params }: { params: { page: number } }) => {
         description={description}
         image={image}
       />
-      <PageHeader title={"Berita"} />
+      <PageHeader title="Pengumuman" />
       <section className="section">
         <div className="container">
           <div className="row gx-5">
@@ -72,17 +39,16 @@ const Posts = ({ params }: { params: { page: number } }) => {
               <div className="row">
                 {currentPosts.map((post: any, index: number) => (
                   <div key={index} className="mb-14 md:col-6">
-                    <BlogCard data={post} />
+                    <PengumumanCard data={post} />
                   </div>
                 ))}
               </div>
               <Pagination
-                section={"berita"}
-                currentPage={currentPage}
+                section={"pengumuman"}
+                currentPage={1}
                 totalPages={totalPages}
               />
             </div>
-
             <PostSidebar
               categories={categories}
               tags={tags}

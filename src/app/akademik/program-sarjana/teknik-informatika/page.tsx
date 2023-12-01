@@ -95,6 +95,7 @@ const TeknikInformatika = () => {
                             <Tab>Visi Misi</Tab>
                             <Tab>Profile Kelulusan</Tab>
                             <Tab>Katalog Produk</Tab>
+                            <Tab>Staf Pengajar</Tab>
                         </TabList>
                         <TabPanels>
                             <TabPanel>
@@ -117,10 +118,10 @@ const TeknikInformatika = () => {
                                 <p>Profil lulusan pada program studi sejalan dengan Visi, Misi, Tujuan, dan Sasaran UKSW yaitu sebagai : </p>
                                 <UnorderedList>
                                     <ListItem>Programer / Application Developer</ListItem>
-                                    <ListItem>UI / UX</ListItem>
-                                    <ListItem>Data Base Administrator</ListItem>
                                     <ListItem>Network Specialist</ListItem>
+                                    <ListItem>Data Base Administrator</ListItem>
                                     <ListItem>Data Analyst</ListItem>
+                                    <ListItem>UI / UX</ListItem>
                                     <ListItem>Technopreneur</ListItem>
                                 </UnorderedList>
                             </TabPanel>
@@ -132,6 +133,18 @@ const TeknikInformatika = () => {
                                         </div>
                                     ))}
                                 </div>
+                            </TabPanel>
+                            <TabPanel>
+                                <UnorderedList>
+                                    <ListItem textTransform="uppercase">ARINI AHA PEKUWALI S.Kom, M.Kom</ListItem>
+                                    <ListItem textTransform="uppercase">RAMBU YETTI KALAWAY  S.T, M.T, M.M</ListItem>
+                                    <ListItem textTransform="uppercase">ALFRIAN CARMEN TALAKUA S.Kom, M.Kom</ListItem>
+                                    <ListItem textTransform="uppercase">FAJAR HARIADI S.T, M.T</ListItem>
+                                    <ListItem textTransform="uppercase">PINGKY ALFA RAY LEO LEDE S.Kom, M.Cs</ListItem>
+                                    <ListItem textTransform="uppercase">YUSTINA RADA S.Kom, M.T</ListItem>
+                                    <ListItem textTransform="uppercase">LEONARD MARTEN DONI RATU S.T, M.T</ListItem>
+                                    <ListItem textTransform="uppercase">Hawu Yogia Pradana Uly, S,Kom., M.Kom</ListItem>
+                                </UnorderedList>
                             </TabPanel>
 
                         </TabPanels>
